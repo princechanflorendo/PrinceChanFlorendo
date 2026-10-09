@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ang Tingug | Ketheluay</title>
+  <style>
+    :root {
+      --color-sage: #b2ac88;
+      --color-black: #0c0d0e;
+      --color-white: #ffffff;
+      --color-text-dark: #111111;
+      --font-main: "Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--color-white);
+      color: var(--color-text-dark);
+      line-height: 1.4;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .site-header {
+      width: 100%;
+      background-color: var(--color-white);
+      padding: 1.2rem 2.5rem;
+    }
+
+    .header-container {
+      max-width: 1350px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .brand-logo img {
+      max-height: 55px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-logo-fallback {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--color-sage);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .main-nav {
+      background-color: var(--color-sage);
+      padding: 0.35rem 0.5rem;
+      border-radius: 6px;
+      flex-grow: 1;
+      max-width: 980px;
+    }
+
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-link {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--color-black);
+      padding: 0.5rem 1.35rem;
+      border-radius: 25px;
+      display: inline-block;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-link.active {
+      background-color: var(--color-white);
+      color: var(--color-black);
+      font-weight: 600;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .nav-link:hover:not(.active) {
+      opacity: 0.75;
+    }
+
+    .main-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .tingug-section {
+      width: 100%;
+      max-width: 1350px;
+      margin: 0 auto;
+      padding: 2rem 2.5rem 4rem;
+    }
+
+    .tingug-container {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .tingug-left-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .page-title {
+      font-size: 5rem;
+      font-weight: 300;
+      color: var(--color-black);
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .profile-card {
+      width: 100%;
+      max-width: 360px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .portrait-circle {
+      width: 310px;
+      height: 310px;
+      border-radius: 50%;
+      background-color: var(--color-sage);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      z-index: 1;
+    }
+
+    .portrait-img {
+      width: 88%;
+      height: auto;
+      object-fit: cover;
+      object-position: center top;
+      margin-bottom: 0;
+      display: block;
+    }
+
+    /* Solid Black Overlapping Banner for Name */
+    .name-banner {
+      width: 100%;
+      background-color: var(--color-black);
+      color: var(--color-white);
+      padding: 1.6rem 1rem 1.8rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      margin-top: -65px; /* Overlaps circle as seen in mockup */
+      position: relative;
+      z-index: 2;
+    }
+
+    .first-name {
+      font-size: 1.35rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .last-name {
+      font-size: 2.3rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .tingug-right-col {
+      padding-top: 1rem;
+    }
+
+    .section-headline {
+      font-size: 3.6rem;
+      font-weight: 900;
+      color: var(--color-black);
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 2rem;
+    }
+
+    .bio-paragraphs {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      font-size: 1.15rem;
+      line-height: 1.5;
+      color: #222222;
+      font-weight: 400;
+      margin-bottom: 3rem;
+      max-width: 780px;
+    }
+
+    .callout-banner {
+      background-color: var(--color-black);
+      padding: 0.75rem 1.5rem;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .callout-top {
+      color: var(--color-sage);
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    .callout-bottom {
+      color: var(--color-white);
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    .callout-bottom em {
+      font-style: italic;
+      font-weight: 900;
+    }
+
+    .site-footer {
+      width: 100%;
+      background-color: var(--color-black);
+      color: var(--color-white);
+      text-align: center;
+      padding: 1rem 2rem;
+      font-size: 0.92rem;
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    /* Responsive Design Adjustments */
+    @media (max-width: 1024px) {
+      .tingug-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .tingug-left-col {
+        align-items: center;
+      }
+
+      .page-title {
+        font-size: 4rem;
+      }
+
+      .section-headline {
+        font-size: 2.8rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .main-nav ul {
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        justify-content: center;
+      }
+
+      .page-title {
+        font-size: 3.2rem;
+      }
+
+      .section-headline {
+        font-size: 2.2rem;
+      }
+
+      .callout-top {
+        font-size: 1.3rem;
+      }
+
+      .callout-bottom {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= HEADER & NAVIGATION ================= -->
+  <header class="site-header">
+    <div class="header-container">
+      
+ <a href="index.html" class="brand-logo">
+  <img src="PHOTOS/PHOTO1.png" alt="Ketheluay Logo" class="logo-img" style="height: 250px; width: auto; max-height: none;" />
+</a>
+
+      <!-- NAVIGATION BAR -->
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="ang-tingug.html" class="nav-link active">Ang Tingug</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="rates.html" class="nav-link">Rates</a></li>
+          <li><a href="book.html" class="nav-link">Book an Event</a></li>
+          <li><a href="about.html" class="nav-link">About Ketheluay</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <div class="main-wrapper">
+    <main class="tingug-section">
+      <div class="tingug-container">
+        
+        <!-- LEFT COLUMN: TITLE & CIRCULAR PROFILE CARD -->
+        <div class="tingug-left-col">
+          <h1 class="page-title">Ang Tingug</h1>
+
+          <div class="profile-card">
+            <!-- CIRCULAR PORTRAIT BACKGROUND -->
+            <div class="portrait-circle">
+              <img src="PHOTOS/PHOTO16.png" alt="Prince Chan Florendo" class="portrait-img" onerror="this.src='https://placehold.co/300x350/b2ac88/ffffff?text=Prince+Chan';" />
+            </div>
+
+            <!-- OVERLAPPING BLACK NAME BANNER -->
+            <div class="name-banner">
+              <span class="first-name">PRINCE CHAN</span>
+              <span class="last-name">FLORENDO</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: BIO CONTENT & CALLOUT BANNER -->
+        <div class="tingug-right-col">
+          <h2 class="section-headline">The voice behind the room</h2>
+
+          <div class="bio-paragraphs">
+            <p>
+              There is more to hosting than speaking into a microphone. It is the ability to read a room, carry its energy, and know when a moment calls for excitement, sincerity, humor, or silence.
+            </p>
+            <p>
+              My experience in broadcast journalism, event hosting, and live voiceover has shaped the way I approach every engagement. I have learned that a good host does not simply fill the space between program segments. A good host gives the event its rhythm, keeps its audience present, and helps each moment arrive with intention.
+            </p>
+            <p>
+              Whether I am standing before a live audience or behind a microphone, I bring the same principle into the work: the voice should serve the moment.
+            </p>
+          </div>
+
+          <!-- BLACK CALLOUT BANNER -->
+          <div class="callout-banner">
+            <span class="callout-top">Before booking, consider my</span>
+            <span class="callout-bottom"><em>hosting</em> and <em>voiceover</em> style.</span>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <p>An enduring voice and presence for your memorable events.</p>
+  </footer>
+
+</body>
+</html>

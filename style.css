@@ -1,0 +1,694 @@
+/* ==========================================================================
+   RESET & GLOBAL VARIABLES
+   ========================================================================== */
+:root {
+  --color-sage: #b2ac88;
+  --color-black: #0c0d0e;
+  --color-white: #ffffff;
+  --font-main: "Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================================================
+   HEADER & LOGO FIX (PARA MODAKO ANG LOGO SA TANANG PAGE)
+   ========================================================================== */
+.site-header {
+  width: 250%;
+  padding: 1.2rem 2rem; /* Gi-dugang ang vertical padding para mosaka ang espasyo sa header */
+  background-color: transparent;
+}
+
+.header-container {
+  max-width: 1350px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; /* Dili tugotan ang logo nga mopiyos/mogamay */
+}
+
+.logo-img {
+  height: 90px !important;    /* Gi-rekomendar nga 80px hangtod 100px para modako gyud */
+  width: auto !important;     /* Mopadayon sa husto nga proportion */
+  max-height: none !important;/* Tangtangon ang bisan unsang pagpugong sa taas */
+  object-fit: contain;
+  display: block;
+}
+
+/* ==========================================================================
+   HEADER & NAVIGATION
+   ========================================================================== */
+.site-header {
+  width: 100%;
+  background-color: var(--color-white);
+  padding: 1rem 2rem;
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.brand-logo .logo-img {
+  max-height: 55px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.main-nav {
+  background-color: var(--color-sage);
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  flex-grow: 1;
+  max-width: 1000px;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-black);
+  padding: 0.45rem 1.25rem;
+  border-radius: 30px;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-link.active {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero-section {
+  padding: 0.5rem 2rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 460px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: var(--color-black);
+}
+
+.hero-image-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.65; /* Dimmed slightly so text stands out */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-white);
+  padding: 2rem;
+}
+
+.hero-title {
+  font-size: 4.8rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.35;
+  margin-bottom: 2rem;
+}
+
+.hero-keywords {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   FEATURES GRID & SAGE GREEN TITLES FIX
+   ========================================================================== */
+.features-section {
+  padding: 1rem 2rem 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+  align-items: stretch;
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ENFORCED SAGE GREEN COLOR (#b2ac88) FOR ALL TITLES */
+.feature-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  color: #b2ac88 !important; /* Sage green fix */
+  min-height: 55px; /* Ensures all titles take equal vertical room */
+}
+
+/* PHOTO SLOTS FIX FOR FACE/IMAGE FIT */
+.photo-input-slot {
+  width: 100%;
+  height: 200px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Focus on face for portrait photos */
+.portrait-focus {
+  object-position: center 20%; /* Prevents face cropping */
+}
+
+/* QR CODE SLOT FIX */
+.qr-input-slot {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.qr-img {
+  max-height: 130px;
+  width: auto;
+  object-fit: contain;
+}
+
+.qr-label {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+/* LET'S CONNECT CARD ALIGNMENT & SPACING FIX */
+.connect-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.connect-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem; /* Tight, clean spacing */
+}
+
+.connect-desc {
+  font-size: 0.95rem;
+  color: #333333;
+  line-height: 1.35;
+}
+
+.email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-black);
+}
+/* ==========================================================================
+   PROJECTS PAGE STYLES
+   ========================================================================== */
+.projects-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem 5rem;
+}
+
+.projects-page-title {
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 300;
+  color: var(--color-black);
+  letter-spacing: -0.03em;
+  margin-bottom: 3.5rem;
+  text-transform: uppercase;
+}
+
+.engagements-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  align-items: start;
+  justify-items: center;
+}
+
+.engagement-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 440px;
+}
+
+/* Titles and Headers */
+.engagement-header {
+  text-align: center;
+  margin-bottom: 1.25rem;
+  width: 100%;
+}
+
+.engagement-title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--color-black);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.engagement-subtitle {
+  font-size: 1.1rem;
+  color: #333333;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.engagement-subtitle em {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.engagement-subtitle.highlight-text {
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+/* Photo Container & Image Sizing */
+.project-photo-container {
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 4 / 5;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #f2f2f2;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Caption Below Right Card */
+.project-caption {
+  font-size: 0.8rem;
+  color: #444444;
+  margin-top: 0.75rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Responsive Grid for Mobile/Tablet */
+@media (max-width: 850px) {
+  .engagements-container {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .projects-page-title {
+    font-size: 2.4rem;
+  }
+
+  .engagement-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* ==========================================================================
+   BOOK AN EVENT PAGE STYLES
+   ========================================================================== */
+.booking-section {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem 5rem;
+}
+
+.booking-page-title {
+  text-align: center;
+  font-size: 3.8rem;
+  font-weight: 300;
+  color: var(--color-black);
+  letter-spacing: -0.04em;
+  margin-bottom: 3rem;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.booking-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.col-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-black);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+.col-subtitle {
+  font-size: 0.95rem;
+  color: #333333;
+  line-height: 1.3;
+  margin-bottom: 1.25rem;
+}
+
+/* Left Column: QR Code & Calendar URL */
+.col-availability {
+  align-items: flex-start;
+}
+
+.qr-container {
+  width: 100%;
+  max-width: 260px;
+  margin-bottom: 0.75rem;
+}
+
+.qr-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.calendar-url-link {
+  font-size: 0.85rem;
+  color: var(--color-black);
+  word-break: break-all;
+  line-height: 1.25;
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+
+.calendar-url-link:hover {
+  opacity: 0.7;
+}
+
+/* Center Column: Form in Sage Green Container */
+.col-form {
+  align-items: flex-start;
+}
+
+.form-card-container {
+  width: 100%;
+  background-color: #b2ac88; /* Sage Green Hex */
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.booking-form input,
+.booking-form textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--color-black);
+  background-color: var(--color-white);
+  outline: none;
+}
+
+.booking-form input::placeholder,
+.booking-form textarea::placeholder {
+  color: #888888;
+  font-weight: 400;
+}
+
+.booking-form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.form-submit-btn {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 4px;
+  padding: 0.85rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  margin-top: 0.25rem;
+}
+
+.form-submit-btn:hover {
+  opacity: 0.85;
+}
+
+/* Right Column: Contact Details */
+.col-reachout {
+  align-items: flex-start;
+}
+
+.contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: var(--color-black);
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.contact-item:hover {
+  opacity: 0.7;
+}
+
+.icon-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Responsive Grid for Mobile/Tablet */
+@media (max-width: 992px) {
+  .booking-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .booking-page-title {
+    font-size: 2.8rem;
+  }
+}
+
+/* ==========================================================================
+   ABOUT KETHELUAY PAGE STYLES
+   ========================================================================== */
+.about-section {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 5rem;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 4rem;
+  align-items: stretch;
+}
+
+/* Left Column Styling */
+.about-left-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-page-title {
+  font-size: 3.8rem;
+  font-weight: 900;
+  color: var(--color-black);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+.about-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-text-content p {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: #222222;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* Right Column: Black Monogram Card */
+.about-right-col {
+  width: 100%;
+  display: flex;
+}
+
+.monogram-card {
+  width: 100%;
+  background-color: var(--color-black);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  min-height: 520px;
+}
+
+.monogram-img {
+  max-width: 60%;
+  max-height: 440px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Responsive Grid for Mobile/Tablet */
+@media (max-width: 992px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-page-title {
+    font-size: 2.8rem;
+  }
+
+  .monogram-card {
+    min-height: 380px;
+  }
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.site-footer {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  text-align: center;
+  padding: 1.25rem 2rem;
+  font-size: 0.9rem;
+  font-style: italic;
+}

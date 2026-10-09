@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voiceover Rates - Ketheluay</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Custom Design Tokens & Typography Base */
+    :root {
+      --bg-header-bar: #b3ae87;
+      --color-basic: #8e9968;
+      --color-standard: #ff6e43;
+      --color-premium: #e5b91b;
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: #ffffff;
+      color: #1a1a1a;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Ketheluay Brand Font Styling simulation */
+    .brand-logo-text {
+      font-family: 'Plus Jakarta Sans', serif;
+      font-weight: 300;
+      letter-spacing: -0.03em;
+    }
+
+    /* Card Box Shadow & Custom Borders */
+    .pricing-card-wrapper {
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      border-radius: 12px;
+      overflow: hidden;
+      background-color: #ffffff;
+    }
+
+    /* Smooth Hover Transitions */
+    .rate-toggle-btn {
+      transition: all 0.25s ease-in-out;
+    }
+    .rate-toggle-btn:hover {
+      opacity: 0.75;
+      transform: translateY(-1px);
+    }
+
+    .nav-pill-link {
+      transition: all 0.2s ease;
+    }
+
+    /* Checkmark Styling */
+    .check-icon {
+      color: #5d752c;
+      font-weight: 900;
+      margin-right: 4px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-[#b3ae87] selection:text-white">
+
+  <!-- Top Navigation Header -->
+  <header class="w-full bg-white pt-6 pb-4 px-4 md:px-12">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      
+      <!-- LOGO -->
+      <a href="#" class="brand-logo">
+        <img src="PHOTOS/PHOTO1.png" alt="Ketheluay Logo" style="height: 250px; width: auto;"/>
+      </a>
+
+      <!-- Navigation Bar Pill -->
+      <nav class="bg-[#b3ae87] rounded-none md:rounded-full px-6 py-2.5 w-full md:w-auto shadow-sm">
+        <ul class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-sm md:text-base font-normal text-gray-900">
+          <li><a href="index.html" class="nav-pill-link hover:opacity-80 px-2 py-1">Home</a></li>
+          <li><a href="ang-tingug.html" class="nav-pill-link hover:opacity-80 px-2 py-1">Ang Tingug</a></li>
+          <li><a href="projects.html" class="nav-pill-link hover:opacity-80 px-2 py-1">Projects</a></li>
+          <!-- Active State: Rates -->
+          <li>
+            <a href="rates.html" class="bg-white text-gray-900 font-medium px-6 py-1.5 rounded-full shadow-sm inline-block">
+              Rates
+            </a>
+          </li>
+          <li><a href="book.html" class="nav-pill-link hover:opacity-80 px-2 py-1">Book an Event</a></li>
+          <li><a href="about.html" class="nav-pill-link hover:opacity-80 px-2 py-1">About Ketheluay</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-6 md:py-10">
+    
+    <!-- Title -->
+    <div class="text-center mb-10 md:mb-14">
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-black font-sans">
+        Voiceover Rates
+      </h1>
+    </div>
+
+    <!-- 3 Columns Layout Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-10 items-start">
+
+      <!-- ================= COLUMN 1: COLLEGE EVENTS ================= -->
+      <div class="flex flex-col items-center">
+        <!-- Category Header -->
+        <div class="text-center mb-6 w-full flex flex-col items-center">
+          <span class="bg-black text-white text-[11px] font-bold tracking-widest px-4 py-1 rounded-sm uppercase mb-2 inline-block">
+            LIVE VOICEOVER
+          </span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-[#8e9968] tracking-tight leading-none uppercase">
+            COLLEGE
+          </h2>
+          <span class="text-2xl md:text-3xl font-extrabold text-black tracking-tight leading-tight block mb-1 lowercase">
+            events
+          </span>
+          <p class="text-xs text-gray-600 font-medium max-w-[260px] leading-tight">
+            Student Council | Program Society<br>College-Based Organization
+          </p>
+        </div>
+
+        <!-- Tier Cards Grid -->
+        <div class="grid grid-cols-3 gap-2 sm:gap-3 w-full">
+          <!-- BASIC CARD -->
+          <div class="pricing-card-wrapper flex flex-col justify-between">
+            <div class="bg-[#8e9968] text-white font-bold text-center py-2 text-xs sm:text-sm tracking-wider uppercase rounded-t-lg">
+              BASIC
+            </div>
+            <div class="p-2 sm:p-3 text-center flex-grow flex flex-col justify-center">
+              <div class="text-xl sm:text-2xl font-extrabold text-black leading-none mb-1">
+                <sup class="text-xs font-semibold">₱</sup>399
+              </div>
+              <div class="text-[10px] sm:text-xs text-gray-500 mb-3 font-medium">/event</div>
+              <ul class="text-[10px] sm:text-xs text-left space-y-1 text-gray-700 font-medium px-1">
+                <li class="flex items-center"><span class="check-icon">✓</span> No script</li>
+                <li class="flex items-center"><span class="check-icon">✓</span> Max 2 hours</li>
+              </ul>
+            </div>
+            <div class="bg-[#8e9968] text-white p-2 text-center text-[10px] sm:text-xs leading-tight rounded-b-lg flex flex-col justify-center min-h-[64px]">
+              <span class="text-lg font-black leading-none block mb-0.5">5%</span>
+              <span class="font-normal opacity-95">discount for <strong class="font-bold">MSU-IIT CHS & CCS</strong></span>
+            </div>
+          </div>
+
+          <!-- STANDARD CARD -->
+          <div class="pricing-card-wrapper flex flex-col justify-between">
+            <div class="bg-[#ff6e43] text-white font-bold text-center py-2 text-xs sm:text-sm tracking-wider uppercase rounded-t-lg">
+              STANDARD
+            </div>
+            <div class="p-2 sm:p-3 text-center flex-grow flex flex-col justify-center">
+              <div class="text-xl sm:text-2xl font-extrabold text-black leading-none mb-1">
+                <sup class="text-xs font-semibold">₱</sup>559
+              </div>
+              <div class="text-[10px] sm:text-xs text-gray-500 mb-3 font-medium">/event</div>
+              <ul class="text-[10px] sm:text-xs text-left space-y-1 text-gray-700 font-medium px-1">
+                <li class="flex items-center"><span class="check-icon">✓</span> No script</li>
+                <li class="flex items-center"><span class="check-icon">✓</span> Max 3 hours</li>
+              </ul>
+            </div>
+            <div class="bg-[#ff6e43] text-white p-2 text-center text-[10px] sm:text-xs leading-tight rounded-b-lg flex flex-col justify-center min-h-[64px]">
+              <span class="text-lg font-black leading-none block mb-0.5">8%</span>
+              <span class="font-normal opacity-95">discount for <strong class="font-bold">MSU-IIT CHS & CCS</strong></span>
+            </div>
+          </div>
+
+          <!-- PREMIUM CARD -->
+          <div class="pricing-card-wrapper flex flex-col justify-between">
+            <div class="bg-[#e5b91b] text-white font-bold text-center py-2 text-xs sm:text-sm tracking-wider uppercase rounded-t-lg">
+              PREMIUM
+            </div>
+            <div class="p-2 sm:p-3 text-center flex-grow flex flex-col justify-center">
+              <div class="text-xl sm:text-2xl font-extrabold text-black leading-none mb-1">
+                <sup class="text-xs font-semibold">₱</sup>799
+              </div>
+              <div class="text-[10px] sm:text-xs text-gray-500 mb-3 font-medium">/event</div>
+              <ul class="text-[10px] sm:text-xs text-left space-y-1 text-gray-700 font-medium px-1">
+                <li class="flex items-center"><span class="check-icon">✓</span> With script</li>
+                <li class="flex items-center"><span class="check-icon">✓</span> Max 5 hours</li>
+              </ul>
+            </div>
+            <div class="bg-[#e5b91b] text-white p-2 text-center text-[10px] sm:text-xs leading-tight rounded-b-lg flex flex-col justify-center min-h-[64px]">
+              <span class="text-lg font-black leading-none block mb-0.5">10%</span>
+              <span class="font-normal opacity-95">discount for <strong class="font-bold">MSU-IIT CHS & CCS</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= COLUMN 2: INSTITUTE EVENTS ================= -->
+      <div class="flex flex-col items-center">
+        <!-- Category Header -->
+        <div class="text-center mb-6 w-full flex flex-col items-center">
+          <span class="bg-black text-white text-[11px] font-bold tracking-widest px-4 py-1 rounded-sm uppercase mb-2 inline-block">
+            LIVE VOICEOVER
+          </span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-[#8e9968] tracking-tight leading-none uppercase">
+            INSTITUTE
+          </h2>
+          <span class="text-2xl md:text-3xl font-extrabold text-black tracking-tight leading-tight block mb-1 lowercase">
+            events
+          </span>
+          <p class="text-xs text-gray-600 font-medium max-w-[260px] leading-tight">
+            KASAMA | Institute-Wide Organization<br>University Offices and Centers
+          </p>
+        </div>
+
+        <!-- Tier Cards Grid -->
+        <div class="grid grid-cols-3 gap-2 sm:gap-3 w-full">
+          <!-- BASIC CARD -->
+          <div class="pricing-card-wrapper flex flex-col justify-between">
+            <div class="bg-[#8e9968] text-white font-bold text-center py-2 text-xs sm:text-sm tracking-wider uppercase rounded-t-lg">
+              BASIC
+            </div>
+            <div class="p-2 sm:p-3 text-center flex-grow flex flex-col justify-center">
+              <div class="text-xl sm:text-2xl font-extrabold text-black leading-none mb-1">
+                <sup class="text-xs font-semibold">₱</sup>559
+              </div>
+              <div class="text-[10px] sm:text-xs text-gray-500 mb-3 font-medium">/event</div>
+              <ul class="text-[10px] sm:text-xs text-left space-y-1 text-gray-700 font-medium px-1">
+                <li class="flex items-center"><span class="check-icon">✓</span> No script</li>
+                <li class="flex items-center"><span class="check-icon">✓</span> Max 2 hours</li>
+              </ul>
+            </div>
+            <div class="bg-[#8e9968] text-white p-2 text-center text-[10px] sm:text-xs leading-tight rounded-b-lg flex flex-col justify-center min-h-[64px]">
+              <span class="text-lg font-black leading-none block mb-0.5">5%</span>
+              <span class="font-normal opacity-95">discount for <strong class="font-bold">MSU-IIT OVCSS</strong></span>
+            </div>
+          </div>
+
+          <!-- STANDARD CARD -->
+          <div class="pricing-card-wrapper flex flex-col justify-between">
+            <div class="bg-[#ff6e43] text-white font-bold text-center py-2 text-xs sm:text-sm tracking-wider uppercase rounded-t-lg">
+              STANDARD
+            </div>
+            <div class="p-2 sm:p-3 text-center flex-grow flex flex-col justify-center">
+              <div class="text-xl sm:text-2xl font-extrabold text-black leading-none mb-1">
+                <sup class="text-xs font-semibold">₱</sup>799
+              </div>
+              <div class="text-[10px] sm:text-xs text-gray-500 mb-3 font-medium">/event</div>
+              <ul class="text-[10px] sm:text-xs text-left space-y-1 text-gray-700 font-medium px-1">
+                <li class="flex items-center"><span class="check-icon">✓</span> No script</li>
+                <li class="flex items-center"><span class="check-icon">✓</span> Max 3 hours</li>
+              </ul>
+            </div>
+            <div class="bg-[#ff6e43] text-white p-2 text-center text-[10px] sm:text-xs leading-tight rounded-b-lg flex flex-col justify-center min-h-[64px]">
+              <span class="text-lg font-black leading-none block mb-0.5">8%</span>
+              <span class="font-normal opacity-95">discount for <strong class="font-bold">MSU-IIT OVCSS</strong></span>
+            </div>
+          </div>
+
+          <!-- PREMIUM CARD -->
+          <div class="pricing-card-wrapper flex flex-col justify-between">
+            <div class="bg-[#e5b91b] text-white font-bold text-center py-2 text-xs sm:text-sm tracking-wider uppercase rounded-t-lg">
+              PREMIUM
+            </div>
+            <div class="p-2 sm:p-3 text-center flex-grow flex flex-col justify-center">
+              <div class="text-xl sm:text-2xl font-extrabold text-black leading-none mb-1">
+                <sup class="text-xs font-semibold">₱</sup>999
+              </div>
+              <div class="text-[10px] sm:text-xs text-gray-500 mb-3 font-medium">/event</div>
+              <ul class="text-[10px] sm:text-xs text-left space-y-1 text-gray-700 font-medium px-1">
+                <li class="flex items-center"><span class="check-icon">✓</span> With script</li>
+                <li class="flex items-center"><span class="check-icon">✓</span> Max 5 hours</li>
+              </ul>
+            </div>
+            <div class="bg-[#e5b91b] text-white p-2 text-center text-[10px] sm:text-xs leading-tight rounded-b-lg flex flex-col justify-center min-h-[64px]">
+              <span class="text-lg font-black leading-none block mb-0.5">10%</span>
+              <span class="font-normal opacity-95">discount for <strong class="font-bold">MSU-IIT OVCSS</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= COLUMN 3: NON-SCHOOL EVENTS ================= -->
+      <div class="flex flex-col items-center">
+        <!-- Category Header -->
+        <div class="text-center mb-6 w-full flex flex-col items-center">
+          <span class="bg-black text-white text-[11px] font-bold tracking-widest px-4 py-1 rounded-sm uppercase mb-2 inline-block">
+            LIVE VOICEOVER
+          </span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-[#8e9968] tracking-tight leading-none uppercase">
+            NON-SCHOOL
+          </h2>
+          <span class="text-2xl md:text-3xl font-extrabold text-black tracking-tight leading-tight block mb-1 lowercase">
+            events
+          </span>
+          <p class="text-xs text-gray-600 font-medium max-w-[260px] leading-tight">
+            Trivia Night | Ribbon-Cutting | Mall Activity<br>Birthday | Wedding | Graduation | Church
+          </p>
+        </div>
+
+        <!-- Tier Cards Grid -->
+        <div class="grid grid-cols-3 gap-2 sm:gap-3 w-full">
+          <!-- BASIC CARD -->
+          <div class="pricing-card-wrapper flex flex-col justify-between">
+            <div class="bg-[#8e9968] text-white font-bold text-center py-2 text-xs sm:text-sm tracking-wider uppercase rounded-t-lg">
+              BASIC
+            </div>
+            <div class="p-2 sm:p-3 text-center flex-grow flex flex-col justify-center">
+              <div class="text-xl sm:text-2xl font-extrabold text-black leading-none mb-1">
+                <sup class="text-xs font-semibold">₱</sup>999
+              </div>
+              <div class="text-[10px] sm:text-xs text-gray-500 mb-3 font-medium">/event</div>
+              <ul class="text-[10px] sm:text-xs text-left space-y-1 text-gray-700 font-medium px-1">
+                <li class="flex items-center"><span class="check-icon">✓</span> No script</li>
+                <li class="flex items-center"><span class="check-icon">✓</span> Max 2 hours</li>
+              </ul>
+            </div>
+            <div class="bg-[#8e9968] text-white p-2 text-center text-[10px] sm:text-xs leading-tight rounded-b-lg flex flex-col justify-center min-h-[64px]">
+              <span class="text-lg font-black leading-none block mb-0.5">5%</span>
+              <span class="font-normal opacity-95">discount for <strong class="font-bold">Church events</strong></span>
+            </div>
+          </div>
+
+          <!-- STANDARD CARD -->
+          <div class="pricing-card-wrapper flex flex-col justify-between">
+            <div class="bg-[#ff6e43] text-white font-bold text-center py-2 text-xs sm:text-sm tracking-wider uppercase rounded-t-lg">
+              STANDARD
+            </div>
+            <div class="p-2 sm:p-3 text-center flex-grow flex flex-col justify-center">
+              <div class="text-xl sm:text-2xl font-extrabold text-black leading-none mb-1">
+                <sup class="text-xs font-semibold">₱</sup>1,299
+              </div>
+              <div class="text-[10px] sm:text-xs text-gray-500 mb-3 font-medium">/event</div>
+              <ul class="text-[10px] sm:text-xs text-left space-y-1 text-gray-700 font-medium px-1">
+                <li class="flex items-center"><span class="check-icon">✓</span> No script</li>
+                <li class="flex items-center"><span class="check-icon">✓</span> Max 4 hours</li>
+              </ul>
+            </div>
+            <div class="bg-[#ff6e43] text-white p-2 text-center text-[10px] sm:text-xs leading-tight rounded-b-lg flex flex-col justify-center min-h-[64px]">
+              <span class="text-lg font-black leading-none block mb-0.5">8%</span>
+              <span class="font-normal opacity-95">discount for <strong class="font-bold">Church events</strong></span>
+            </div>
+          </div>
+
+          <!-- PREMIUM CARD -->
+          <div class="pricing-card-wrapper flex flex-col justify-between">
+            <div class="bg-[#e5b91b] text-white font-bold text-center py-2 text-xs sm:text-sm tracking-wider uppercase rounded-t-lg">
+              PREMIUM
+            </div>
+            <div class="p-2 sm:p-3 text-center flex-grow flex flex-col justify-center">
+              <div class="text-xl sm:text-2xl font-extrabold text-black leading-none mb-1">
+                <sup class="text-xs font-semibold">₱</sup>1,599
+              </div>
+              <div class="text-[10px] sm:text-xs text-gray-500 mb-3 font-medium">/event</div>
+              <ul class="text-[10px] sm:text-xs text-left space-y-1 text-gray-700 font-medium px-1">
+                <li class="flex items-center"><span class="check-icon">✓</span> With script</li>
+                <li class="flex items-center"><span class="check-icon">✓</span> Max 6 hours</li>
+              </ul>
+            </div>
+            <div class="bg-[#e5b91b] text-white p-2 text-center text-[10px] sm:text-xs leading-tight rounded-b-lg flex flex-col justify-center min-h-[64px]">
+              <span class="text-lg font-black leading-none block mb-0.5">10%</span>
+              <span class="font-normal opacity-95">discount for <strong class="font-bold">Church events</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Toggle Link to Hosting Rates -->
+    <div class="mt-12 md:mt-16 text-center">
+      <a href="rates.html" class="rate-toggle-btn text-2xl md:text-3xl lg:text-4xl italic font-normal text-black tracking-tight inline-block cursor-pointer">
+        &gt;Check Hosting Rates&lt;
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Bottom Footer -->
+  <footer class="w-full bg-black text-white text-center py-4 px-4 mt-8">
+    <p class="text-xs sm:text-sm md:text-base font-normal italic tracking-wide text-gray-200">
+      An enduring voice and presence for your memorable events.
+    </p>
+  </footer>
+
+</body>
+</html>

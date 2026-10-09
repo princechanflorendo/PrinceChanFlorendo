@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hosting Rates | Ketheluay</title>
+  <style>
+    :root {
+      --color-sage: #b2ac88;
+      --color-black: #0c0d0e;
+      --color-white: #ffffff;
+      --color-bg-light: #f9f9fb;
+      --color-text: #1a1a1a;
+      
+      /* Pricing Tier Theme Colors */
+      --color-basic: #839e5e;      /* Muted Green */
+      --color-standard: #f37042;   /* Vibrant Orange */
+      --color-premium: #eab327;    /* Bright Yellow-Gold */
+      
+      --font-main: "Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--color-white);
+      color: var(--color-text);
+      line-height: 1.4;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .site-header {
+      width: 100%;
+      background-color: var(--color-white);
+      padding: 1.2rem 2.5rem;
+    }
+
+    .header-container {
+      max-width: 1350px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .brand-logo img {
+      max-height: 55px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-logo-fallback {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--color-sage);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .main-nav {
+      background-color: var(--color-sage);
+      padding: 0.35rem 0.5rem;
+      border-radius: 6px;
+      flex-grow: 1;
+      max-width: 980px;
+    }
+
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-link {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--color-black);
+      padding: 0.5rem 1.35rem;
+      border-radius: 25px;
+      display: inline-block;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-link.active {
+      background-color: var(--color-white);
+      color: var(--color-black);
+      font-weight: 600;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .nav-link:hover:not(.active) {
+      opacity: 0.8;
+    }
+
+    .main-wrapper {
+      flex: 1;
+      width: 100%;
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 3rem;
+    }
+
+    .page-title {
+      text-align: center;
+      font-size: 4.8rem;
+      font-weight: 300;
+      color: var(--color-black);
+      letter-spacing: -0.04em;
+      margin-bottom: 2.5rem;
+      line-height: 1;
+    }
+
+    /* 3 Main Categories Container */
+    .rates-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .category-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Black Hosting Badge Header */
+    .hosting-badge {
+      background-color: var(--color-black);
+      color: var(--color-white);
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      padding: 0.25rem 2rem;
+      border-radius: 3px;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .category-title {
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 0.95;
+      text-align: center;
+      text-transform: uppercase;
+      color: #6d844c; /* Muted Green tone matching logo title accent */
+      letter-spacing: -0.02em;
+    }
+
+    .category-title span {
+      display: block;
+      color: var(--color-black);
+      font-weight: 900;
+    }
+
+    .category-subtitle {
+      font-size: 0.82rem;
+      color: #444;
+      text-align: center;
+      margin-top: 0.5rem;
+      margin-bottom: 1.8rem;
+      line-height: 1.25;
+      font-weight: 500;
+      min-height: 2.5em;
+    }
+
+    .tiers-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      width: 100%;
+    }
+
+    .tier-card {
+      display: flex;
+      flex-direction: column;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      background-color: var(--color-white);
+    }
+
+    .tier-header {
+      padding: 0.6rem 0.2rem;
+      text-align: center;
+      color: var(--color-white);
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .tier-card.basic .tier-header { background-color: var(--color-basic); }
+    .tier-card.standard .tier-header { background-color: var(--color-standard); }
+    .tier-card.premium .tier-header { background-color: var(--color-premium); }
+
+    .tier-body {
+      background-color: #f7f7f7;
+      padding: 1.2rem 0.5rem 1rem;
+      text-align: center;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .price-amount {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--color-black);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .price-unit {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #555;
+      margin-top: 0.15rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .feature-list {
+      list-style: none;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      padding: 0 0.2rem;
+      text-align: left;
+    }
+
+    .feature-item {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      line-height: 1.2;
+    }
+
+    .feature-item svg {
+      width: 11px;
+      height: 11px;
+      fill: #222;
+      flex-shrink: 0;
+    }
+
+    .discount-banner {
+      margin-top: 0.6rem;
+      border-radius: 0 0 10px 10px;
+      padding: 0.8rem 0.4rem;
+      text-align: center;
+      color: var(--color-white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 85px;
+    }
+
+    .tier-card.basic .discount-banner { background-color: var(--color-basic); }
+    .tier-card.standard .discount-banner { background-color: var(--color-standard); }
+    .tier-card.premium .discount-banner { background-color: var(--color-premium); }
+
+    .discount-percent {
+      font-size: 1.8rem;
+      font-weight: 900;
+      line-height: 0.9;
+    }
+
+    .discount-percent span {
+      font-size: 1rem;
+      vertical-align: super;
+    }
+
+    .discount-label {
+      font-size: 0.68rem;
+      line-height: 1.1;
+      font-weight: 600;
+      margin-top: 0.2rem;
+      text-transform: uppercase;
+      opacity: 0.95;
+    }
+
+    .sub-nav-link {
+      display: block;
+      text-align: center;
+      margin: 1rem auto 2rem;
+      font-size: 2.2rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--color-black);
+      letter-spacing: -0.02em;
+      transition: opacity 0.2s ease;
+    }
+
+    .sub-nav-link:hover {
+      opacity: 0.7;
+    }
+
+    .site-footer {
+      width: 100%;
+      background-color: var(--color-black);
+      color: var(--color-white);
+      text-align: center;
+      padding: 0.9rem 2rem;
+      font-size: 0.95rem;
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    @media (max-width: 1180px) {
+      .rates-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .category-subtitle {
+        min-height: auto;
+      }
+
+      .price-amount {
+        font-size: 1.8rem;
+      }
+
+      .feature-item {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .main-nav ul {
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        justify-content: center;
+      }
+
+      .page-title {
+        font-size: 3.2rem;
+      }
+
+      .tiers-container {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .sub-nav-link {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= HEADER & NAVIGATION ================= -->
+  <header class="site-header">
+    <div class="header-container">
+      
+<a href="index.html" class="brand-logo">
+  <img src="PHOTOS/PHOTO1.png" alt="Ketheluay Logo" class="logo-img" style="height: 250px; width: auto; max-height: none;" />
+</a>
+
+      <!-- MAIN NAVIGATION BAR -->
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="ang-tingug.html" class="nav-link">Ang Tingug</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="rates.html" class="nav-link active">Rates</a></li>
+          <li><a href="book.html" class="nav-link">Book an Event</a></li>
+          <li><a href="about.html" class="nav-link">About Ketheluay</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <div class="main-wrapper">
+    <!-- PAGE TITLE -->
+    <h1 class="page-title">Hosting Rates</h1>
+
+    <!-- 3 CATEGORY COLUMNS -->
+    <main class="rates-grid">
+      
+      <section class="category-column">
+        <div class="hosting-badge">HOSTING</div>
+        <h2 class="category-title" style="color: #7b9355;">COLLEGE<span>events</span></h2>
+        <p class="category-subtitle">
+          Student Council | Program Society<br />
+          College-Based Organization
+        </p>
+
+        <div class="tiers-container">
+          <!-- BASIC -->
+          <article class="tier-card basic">
+            <div class="tier-header">BASIC</div>
+            <div class="tier-body">
+              <div class="price-amount">₱500</div>
+              <div class="price-unit">/event</div>
+              <ul class="feature-list">
+                <li class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  No script
+                </li>
+                <li class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  Max 2 hours
+                </li>
+              </ul>
+            </div>
+            <div class="discount-banner">
+              <div class="discount-percent">5<span>%</span></div>
+              <div class="discount-label">discount for <strong>MSU-IIT CHS & CCS</strong></div>
+            </div>
+          </article>
+
+          <!-- STANDARD -->
+          <article class="tier-card standard">
+            <div class="tier-header">STANDARD</div>
+            <div class="tier-body">
+              <div class="price-amount">₱800</div>
+              <div class="price-unit">/event</div>
+              <ul class="feature-list">
+                <li class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  No script
+                </li>
+                <li class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  Max 4 hours
+                </li>
+              </ul>
+            </div>
+            <div class="discount-banner">
+              <div class="discount-percent">8<span>%</span></div>
+              <div class="discount-label">discount for <strong>MSU-IIT CHS & CCS</strong></div>
+            </div>
+          </article>
+
+          <!-- PREMIUM -->
+          <article class="tier-card premium">
+            <div class="tier-header">PREMIUM</div>
+            <div class="tier-body">
+              <div class="price-amount">₱1,000</div>
+              <div class="price-unit">/event</div>
+              <ul class="feature-list">
+                <li class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  With script
+                </li>
+                <li class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  Max 5 hours
+                </li>
+              </ul>
+            </div>
+            <div class="discount-banner">
+              <div class="discount-percent">10<span>%</span></div>
+              <div class="discount-label">discount for <strong>MSU-IIT CHS & CCS</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="category-column">
+        <div class="hosting-badge">HOSTING</div>
+        <h2 class="category-title" style="color: #728950;">INSTITUTE<span>events</span></h2>
+        <p class="category-subtitle">
+          KASAMA | Institute-Wide Organization<br />
+          University Offices and Centers
+        </p>
+
+        <div class="tiers-container">
+          <!-- BASIC -->
+          <article class="tier-card basic">
+            <div class="tier-header">BASIC</div>
+            <div class="tier-body">
+              <div class="price-amount">₱650</div>
+              <div class="price-unit">/event</div>
+              <ul class="feature-list">
+                <li class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  No script
+                </li>
+                <li class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  Max 2 hours
+                </li>
+              </ul>
+            </div>
+            <div class="discount-banner">
+              <div class="discount-percent">5<span>%</span></div>
+              <div class="discount-label">discount for <strong>MSU-IIT OVCSS</strong></div>
+            </div>
+          </article>
+
+          <!-- STANDARD -->
+          <article class="tier-card standard">
+            <div class="tier-header">STANDARD</div>
+            <div class="tier-body">
+              <div class="price-amount">₱1,000</div>
+              <div class="price-unit">/event</div>
+              <ul class="feature-list">
+                <li class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  No script
+                </li>
+                <li class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  Max 3 hours
+                </li>
+              </ul>
+            </div>
+            <div class="discount-banner">
+              <div class="discount-percent">8<span>%</span></div>
+              <div class="discount-label">discount for <strong>MSU-IIT OVCSS</strong></div>
+            </div>
+          </article>
+
+          <!-- PREMIUM -->
+          <article class="tier-card premium">
+            <div class="tier-header">PREMIUM</div>
+            <div class="tier-body">
+              <div class="price-amount">₱1,500</div>
+              <div class="price-unit">/event</div>
+              <ul class="feature-list">
+                <li class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  With script
+                </li>
+                <li class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  Max 5 hours
+                </li>
+              </ul>
+            </div>
+            <div class="discount-banner">
+              <div class="discount-percent">10<span>%</span></div>
+              <div class="discount-label">discount for <strong>MSU-IIT OVCSS</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="category-column">
+        <div class="hosting-badge">HOSTING</div>
+        <h2 class="category-title" style="color: #6a8246;">NON-SCHOOL<span>events</span></h2>
+        <p class="category-subtitle">
+          Trivia Night | Ribbon-Cutting | Mall Activity<br />
+          Birthday | Wedding | Graduation | Church
+        </p>
+
+        <div class="tiers-container">
+          <!-- BASIC -->
+          <article class="tier-card basic">
+            <div class="tier-header">BASIC</div>
+            <div class="tier-body">
+              <div class="price-amount">₱1,299</div>
+              <div class="price-unit">/event</div>
+              <ul class="feature-list">
+                <li class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  No script
+                </li>
+                <li class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  Max 2 hours
+                </li>
+              </ul>
+            </div>
+            <div class="discount-banner">
+              <div class="discount-percent">5<span>%</span></div>
+              <div class="discount-label">discount for <strong>Church events</strong></div>
+            </div>
+          </article>
+
+          <!-- STANDARD -->
+          <article class="tier-card standard">
+            <div class="tier-header">STANDARD</div>
+            <div class="tier-body">
+              <div class="price-amount">₱1,599</div>
+              <div class="price-unit">/event</div>
+              <ul class="feature-list">
+                <li class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  No script
+                </li>
+                <li class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  Max 4 hours
+                </li>
+              </ul>
+            </div>
+            <div class="discount-banner">
+              <div class="discount-percent">8<span>%</span></div>
+              <div class="discount-label">discount for <strong>Church events</strong></div>
+            </div>
+          </article>
+
+          <!-- PREMIUM -->
+          <article class="tier-card premium">
+            <div class="tier-header">PREMIUM</div>
+            <div class="tier-body">
+              <div class="price-amount">₱1,899</div>
+              <div class="price-unit">/event</div>
+              <ul class="feature-list">
+                <li class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  With script
+                </li>
+                <li class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  Max 6 hours
+                </li>
+              </ul>
+            </div>
+            <div class="discount-banner">
+              <div class="discount-percent">10<span>%</span></div>
+              <div class="discount-label">discount for <strong>Church events</strong></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- SUB-NAVIGATION LINK -->
+    <a href="voiceover-rates.html" class="sub-nav-link">&gt;Check Voiceover Rates&lt;</a>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <p>An enduring voice and presence for your memorable events.</p>
+  </footer>
+
+</body>
+</html>
